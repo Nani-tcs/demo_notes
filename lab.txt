@@ -1,0 +1,126 @@
+    1  ll
+    2  rm -rf Epsilon-AWS-Intelligent-AssistantBot-GP_Main/
+    3  ll
+    4  clear
+    5  cd
+    6  sudo su
+    7  sudo vim .bash_history 
+    8  sudo cloud-init clean
+    9  cd
+   10  ll
+   11  sudo snp remove firefox -y
+   12  sudo sanp remove firefox -y
+   13  sudo snap remove firefox -y
+   14  sudo snap remove firefox
+   15  sudo systemctl stop unattended-upgrades.service 
+   16  sudo systemctl disable  unattended-upgrades.service 
+   17  ll
+   18  rm -rf google-chrome-stable_current_amd64.deb 
+   19  rm -rf awscliv2.zip 
+   20  sudo snap remove firefox
+   21  ll
+   22  cd Desktop/
+   23  ll
+   24  rm -rf firefox_firefox.desktop 
+   25  ll
+   26  clear
+   27  sudo cloud-init clean
+   28  sudo apt install sshpass
+   29  sudo su
+   30  cd 
+   31  sudo systemctl status unattended-upgrades.service 
+   32  sudo apt install sshpass
+   33  sudo apt install dos2unix
+   34  sudo cloud-init clean
+   35  cd
+   36  pip install paramiko boto3
+   37  df -h
+   38  pip install paramiko boto3
+   39  pip install --upgrade pip
+   40  pip install paramiko boto3
+   41  sudo cloud-init clean
+   42  clear
+   43  cd
+   44  ll
+   45  clear
+   46  sudo su
+   47  cd
+   48  curl -sL https://deb.nodesource.com/setup_25.x -o /tmp/nodesource_setup.sh
+   49  sudo bash /tmp/nodesource_setup.sh
+   50  sudo apt install nodejs -y
+   51  sudo npm install -g @google/gemini-cli
+   52  docker --version
+   53  snap install docker
+   54  ls
+   55  ls -a
+   56  cd demo notes
+   57  rn demo notes demo_notes
+   58  ls
+   59  cd demo_notes
+   60  pip install -r requirements.txt
+   61  gcloud iam service-accounts create my-firestore-dev-sa --description="Service account for local Firestore development" --display-name="Firestore Dev SA"
+   62  gcloud config set project trainocat-1771998241242
+   63  gcloud iam service-accounts create my-firestore-dev-sa --description="Service account for local Firestore development" --display-name="Firestore Dev SA"
+   64  gcloud auth login
+   65  gcloud config set project trainocat-1771998241242
+   66  gcloud iam service-accounts create my-firestore-dev-sa --description="Service account for local Firestore development" --display-name="Firestore Dev SA"
+   67  gcloud iam service-accounts keys create ./service-account-key.json   --iam-account my-firestore-dev-sa@trainocat-1771998241242.iam.gserviceaccount.com@trainocat-1771998241242.iam.gserviceaccount.com
+   68  gcloud iam service-accounts keys create demo_notes/service-account-key.json   --iam-account my-firestore-dev-sa@trainocat-1771998241242.iam.gserviceaccount.com
+   69  gcloud iam service-accounts keys create ./service-account-key.json   --iam-account Firestore Dev SA@trainocat-1771998241242.iam.gserviceaccount.com
+   70  gcloud iam service-accounts keys create ./service-account-key.json   --iam-account my-firestore-dev-sa@trainocat-1771998241242.iam.gserviceaccount.com@trainocat-1771998241242.iam.gserviceaccount.com
+   71  gcloud iam service-accounts keys create ./service-account-key.json --iam-account my-firestore-dev-sa@trainocat-1771998241242.iam.gserviceaccount.com
+   72  clear
+   73  gcloud iam service-accounts keys create ./service-account-key.json --iam-account my-firestore-dev-sa@trainocat-1771998241242.iam.gserviceaccount.com
+   74  ls -lrt
+   75  export GOOGLE_APPLICATION_CREDENTIALS="./service-account-key.json"
+   76  export GOOGLE_CLOUD_PROJECT="trainocat-1771998241242"
+   77  python app.py
+   78  gcloud services enable run.googleapis.com 
+   79  gcloud services enable run.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com firestore.googleapis.com logging.googleapis.com monitoring.googleapis.com
+   80  PROJECT_ID=$(gcloud config get-value project)
+   81  IMAGE_NAME="notes-app"
+   82  REGION="us-central1"
+   83  gcloud services enable artifactregistry.googleapis.com
+   84  gcloud artifacts repositories create ${REGION}-docker --repository-format=docker     --location=${REGION} --description="Docker repository for Cloud Run images"
+   85  docker build -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REGION}-docker/${IMAGE_NAME} .
+   86  gcloud run deploy ${IMAGE_NAME}     --image ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REGION}-docker/${IMAGE_NAME}     --platform managed     --region ${REGION}     --allow-unauthenticated     --update-env-vars GOOGLE_CLOUD_PROJECT=${PROJECT_ID}
+   87  echo $PROJECT_ID
+   88  echo $REGION
+   89  echo $IMAGE_NAME
+   90  gcloud builds submit --tag ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REGION}-docker/${IMAGE_NAME}
+   91  gcloud run deploy ${IMAGE_NAME}   --image ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REGION}-docker/${IMAGE_NAME}   --platform managed   --region ${REGION}   --allow-unauthenticated   --update-env-vars GOOGLE_CLOUD_PROJECT=${PROJECT_ID}
+   92  export REGION=us-central1
+   93  export PROJECT_ID=$(gcloud config get-value project)
+   94  export IMAGE_NAME=notes-app
+   95  export IMAGE_PATH=${REGION}-docker.pkg.dev/${PROJECT_ID}/prebuilt-images/${IMAGE_NAME}:latest
+   96  gcloud run deploy ${IMAGE_NAME}   --image ${IMAGE_PATH}   --platform managed   --region ${REGION}   --allow-unauthenticated   --update-env-vars GOOGLE_CLOUD_PROJECT=${PROJECT_ID}
+   97  gcloud artifacts repositories list --project ${PROJECT_ID}
+   98  gcloud artifacts docker images list ${REGION}-docker.pkg.dev/${PROJECT_ID}/us-central1-docker
+   99  gcloud run deploy notes-app   --image gcr.io/cloud-training/notes-app:latest   --platform managed   --region us-central1   --allow-unauthenticated   --update-env-vars GOOGLE_CLOUD_PROJECT=${PROJECT_ID}
+  100  curl -I https://gcr.io/v2/
+  101  gcloud run deploy test-app   --image gcr.io/cloudrun/hello   --platform managed   --region us-central1   --allow-unauthenticated
+  102  gcloud run deploy notes-app   --image gcr.io/cloud-training/notes-app:latest   --platform managed   --region us-central1   --allow-unauthenticated   --update-env-vars GOOGLE_CLOUD_PROJECT=${PROJECT_ID}
+  103  gcloud artifacts repositories list --project ${PROJECT_ID}
+  104  gcloud artifacts docker images list ${REGION}-docker.pkg.dev/${PROJECT_ID}/us-central1-docker
+  105  #!/bin/bash
+  106  # Set variables
+  107  export PROJECT_ID=$(gcloud config get-value project)
+  108  export REGION=us-central1
+  109  export REPO_NAME=us-central1-docker
+  110  export SERVICE_NAME=notes-app
+  111  # Check for any image in the repo
+  112  IMAGE_PATH=$(gcloud artifacts docker images list ${REGION}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME} \
+  --format="value(NAME)" | head -n 1)
+  113  # Fallback to public test image if none found
+  114  if [ -z "$IMAGE_PATH" ]; then     echo "No images found in ${REPO_NAME}. Using public test image...";     IMAGE_PATH="gcr.io/cloudrun/hello"; else     echo "Found image: $IMAGE_PATH"; fi
+  115  # Deploy to Cloud Run
+  116  gcloud run deploy ${SERVICE_NAME}   --image ${IMAGE_PATH}   --platform managed   --region ${REGION}   --allow-unauthenticated   --update-env-vars GOOGLE_CLOUD_PROJECT=${PROJECT_ID}
+  117  gcloud artifacts repositories list
+  118  gcloud artifacts docker images list ${REGION}-docker.pkg.dev/${PROJECT_ID}/us-central1-docker
+  119  gcloud run deploy notes-app   --image gcr.io/cloudrun/hello   --platform managed   --region us-central1   --allow-unauthenticated
+  120  gcloud artifacts docker images list ${REGION}-docker.pkg.dev/${PROJECT_ID}/us-central1-docker
+  121  vi cloudbuild.yaml
+  122  kubectl --version
+  123  snap install kubectl
+  124  history
+  125  history > lab.txt
